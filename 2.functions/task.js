@@ -44,8 +44,13 @@ function makeWork (arrOfArr, func) {
     return max;
 }
 
-// Хэлпер, возвращает сумму отфильтрованного массива 
-// и его количество элементов 
+/**
+* Хэлпер, возвращает сумму отфильтрованного массива 
+* и его количество элементов
+* @param filterFunc функция, которая будет использоваться для фильтрации
+* @param arr сам массив
+* @returns Возарщает объект с полями sum (сумма массива) и length (длина отфильтрованног массива)
+**/
 function sumElementsByFilter(filterFunc, ...arr) {
     let filtered = arr.filter(filterFunc);
     return {sum: summElementsWorker(...filtered), length: filtered.length};
